@@ -1,9 +1,6 @@
 {
   "version": "0.2",
-  "words": [
-    "canideploy",
-    "esbuild",
-    "startover",
-    "vitest"
-  ]
+  "ignoreRandomStrings": true,
+  "words": ["canideploy", "commitlint", "esbuild", "startover", "webdeveric", "nrwl", "vitest"],
+  "ignoreWords": ["orizer"]
 }
