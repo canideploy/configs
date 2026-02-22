@@ -1,0 +1,30 @@
+{
+  "name": "@canideploy/prettier-config",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@canideploy/configs-monorepo": "./src/prettier-config.ts",
+      "types": "./dist/prettier-config.d.ts",
+      "import": "./dist/prettier-config.js",
+      "default": "./dist/prettier-config.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "keywords": [
+    "prettier"
+  ],
+  "devDependencies": {
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "prettier": ">=2.4.0"
+  }
+}
