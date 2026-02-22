@@ -1,2 +1,16 @@
 packages:
-  - "packages/*"
+  - packages/*
+
+autoInstallPeers: true
+
+catalog:
+  '@vitest/coverage-v8': ^4.0.18
+  prettier: ^3.8.1
+  vitest: ^4.0.18
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+  - nx
+
+strictPeerDependencies: true

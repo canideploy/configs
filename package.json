@@ -1,18 +1,63 @@
 {
-  "name": "@configs/source",
+  "name": "@canideploy/configs-monorepo",
   "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
   "private": true,
-  "dependencies": {},
+  "description": "Monorepo for shared configs",
+  "packageManager": "pnpm@10.30.1+sha512.3590e550d5384caa39bd5c7c739f72270234b2f6059e13018f975c313b1eb9fefcc09714048765d4d9efe961382c312e624572c0420762bdc5d5940cdf9be73a",
+  "keywords": [],
+  "author": "Eric King <eric@canideploy.dev> (https://canideploy.dev/)",
+  "license": "UNLICENSED",
+  "scripts": {
+    "sync": "nx sync",
+    "build": "nx run-many -t build",
+    "typecheck": "nx run-many -t typecheck",
+    "format": "nx format:write",
+    "lint": "nx run-many -t lint",
+    "secretlint": "secretlint . --maskSecrets",
+    "spellcheck": "cspell --dot \"./{.github,packages}/**/*.{md,js,mjs,cjs,ts,mts,cts,tsx,json,yml}\" \"./*.{md,js,mjs,cjs,ts,mts,cts,tsx,json}\"",
+    "test": "nx run-many -t test",
+    "local-registry": "nx run @canideploy/configs-monorepo:local-registry",
+    "prepare": "husky"
+  },
+  "prettier": "@canideploy/prettier-config",
   "devDependencies": {
-    "@nx/js": "22.5.1",
+    "@canideploy/prettier-config": "workspace:*",
+    "@eslint/js": "^9.39.3",
+    "@nx/eslint": "^22.5.2",
+    "@nx/eslint-plugin": "^22.5.2",
+    "@nx/js": "^22.5.2",
+    "@nx/vitest": "^22.5.2",
     "@swc-node/register": "~1.11.1",
-    "@swc/core": "~1.15.5",
+    "@swc/core": "^1.15.11",
     "@swc/helpers": "~0.5.18",
-    "nx": "22.5.1",
-    "prettier": "~3.6.2",
-    "tslib": "^2.3.0",
-    "typescript": "~5.9.2"
+    "@types/node": "^25.3.0",
+    "@vitest/coverage-v8": "catalog:",
+    "cspell": "^9.6.4",
+    "eslint": "^9.39.3",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "jsonc-eslint-parser": "^3.1.0",
+    "lint-staged": "^16.2.7",
+    "nx": "^22.5.2",
+    "prettier": "~3.8.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.56.0",
+    "validate-package-exports": "^0.18.0",
+    "verdaccio": "^6.2.7",
+    "vite": "^7.3.1",
+    "vitest": "catalog:"
+  },
+  "nx": {
+    "includedScripts": [],
+    "targets": {
+      "local-registry": {
+        "executor": "@nx/js:verdaccio",
+        "options": {
+          "port": 4873,
+          "config": ".verdaccio/config.yml",
+          "storage": "tmp/local-registry/storage"
+        }
+      }
+    }
   }
 }
