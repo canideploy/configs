@@ -46,7 +46,7 @@ rm-coverage:
 
 rm-dist:
 	@echo "Removing dist folders..."
-	-@ rm -rf ./dist ./{apps,libs,packages}/*/dist ./{apps,libs,packages}/*/storybook-static ./{apps,libs,packages}/*/*.tsbuildinfo ./{apps,libs,packages}/*/.sst.config.*.mjs ./{apps,libs,packages}/*/vitest.config.mts.timestamp-*.mjs
+	-@ rm -rf ./dist ./packages/*/dist
 	@echo "dist folders have been removed"
 
 rm-node-modules:
