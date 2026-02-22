@@ -5,6 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "license": "MIT",
   "main": "./dist/prettier.config.js",
   "module": "./dist/prettier.config.js",
   "types": "./dist/prettier.config.d.ts",
