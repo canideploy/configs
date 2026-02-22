@@ -1,4 +1,9 @@
 {
   "version": "0.2",
-  "words": ["canideploy", "esbuild", "vitest"]
+  "words": [
+    "canideploy",
+    "esbuild",
+    "startover",
+    "vitest"
+  ]
 }
