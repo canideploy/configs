@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import config from './prettier-config.js';
+import config from './prettier.config.js';
 
 describe('prettier-config', () => {
   it('should export a shared config', () => {

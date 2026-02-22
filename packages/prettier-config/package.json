@@ -5,16 +5,16 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/prettier.config.js",
+  "module": "./dist/prettier.config.js",
+  "types": "./dist/prettier.config.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "@canideploy/configs-monorepo": "./src/prettier-config.ts",
-      "types": "./dist/prettier-config.d.ts",
-      "import": "./dist/prettier-config.js",
-      "default": "./dist/prettier-config.js"
+      "@canideploy/configs-monorepo": "./src/prettier.config.ts",
+      "types": "./dist/prettier.config.d.ts",
+      "import": "./dist/prettier.config.js",
+      "default": "./dist/prettier.config.js"
     }
   },
   "files": [
