@@ -1,0 +1,41 @@
+{
+  "name": "@canideploy/commitlint-config",
+  "version": "0.0.0",
+  "description": "commitlint config using conventional commits",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canideploy/configs.git",
+    "directory": "packages/commitlint-config"
+  },
+  "keywords": [
+    "commitlint",
+    "commitlint-config",
+    "conventional-changelog"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "main": "./dist/commitlint-config.js",
+  "types": "./dist/commitlint-config.d.ts",
+  "dependencies": {
+    "@commitlint/config-conventional": "^20.4.2",
+    "@commitlint/types": "catalog:",
+    "commitlint-plugin-cspell": "^0.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/load": "^20.4.0",
+    "@commitlint/lint": "^20.4.2",
+    "commitlint": "catalog:",
+    "conventional-commits-parser": "^6.2.1"
+  },
+  "peerDependencies": {
+    "commitlint": ">=20"
+  }
+}
