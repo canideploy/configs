@@ -1,18 +1,19 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [push]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   actions: read
   contents: read
 
 jobs:
-  main:
-    runs-on: ubuntu-latest
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
         with:
@@ -22,13 +23,17 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
-      # Cache node_modules
-      - uses: actions/setup-node@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
         with:
-          cache: 'pnpm'
           node-version-file: '.node-version'
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - run: pnpm exec nx run-many -t lint test build typecheck
+      - name: Nx report
+        run: pnpm exec nx report
+
+      - name: Lint, typecheck, test, and build
+        run: pnpm exec nx run-many -t lint typecheck test build
