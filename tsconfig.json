@@ -5,6 +5,15 @@
   "references": [
     {
       "path": "./packages/prettier-config"
+    },
+    {
+      "path": "./packages/secretlint-config"
+    },
+    {
+      "path": "./packages/commitlint-config"
+    },
+    {
+      "path": "./tools/workspace"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": "0.2",
   "ignoreRandomStrings": true,
-  "words": ["canideploy", "commitlint", "esbuild", "startover", "webdeveric", "nrwl", "vitest"],
+  "words": ["canideploy", "commitlint", "esbuild", "startover", "tsconfig.json", "webdeveric", "nrwl", "vitest"],
   "ignoreWords": ["orizer"]
 }
