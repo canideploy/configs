@@ -2,6 +2,9 @@
   "name": "@canideploy/prettier-config",
   "version": "0.0.0",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
