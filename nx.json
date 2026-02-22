@@ -60,6 +60,18 @@
     },
     "conventionalCommits": {
       "types": {
+        "deps": {
+          "semverBump": "minor",
+          "changelog": {
+            "title": "Dependency Updates"
+          }
+        },
+        "deps-dev": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Dev Dependency Updates"
+          }
+        },
         "build": {
           "semverBump": "none",
           "changelog": {
