@@ -45,7 +45,6 @@
     "vitest": "catalog:"
   },
   "peerDependencies": {
-    "prettier": ">=2.4.0",
-    "vitest": "catalog:"
+    "prettier": ">=2.4.0"
   }
 }
