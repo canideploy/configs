@@ -1,8 +1,11 @@
+.eslintcache
 .nx/cache
 .nx/workspace-data
 .vscode
+coverage
 dist
 node_modules
 out-tsc
 tmp
+tsconfig.tsbuildinfo
 vitest.config.*.timestamp*
