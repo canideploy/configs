@@ -1,11 +1,27 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": ["default"],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+  "neverConnectToCloud": true,
+  "cli": {
+    "packageManager": "pnpm"
   },
-  "nxCloudId": "699752b6da90ed0a914bc559",
+  "sync": {
+    "applyChanges": true
+  },
+  "tui": {
+    "enabled": true,
+    "autoExit": true
+  },
+  "namedInputs": {
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.mjs",
+      "!{projectRoot}/**/?(*.)+test.[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.test.json"
+    ]
+  },
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
@@ -20,6 +36,122 @@
           "watchDepsName": "watch-deps"
         }
       }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "test",
+        "ciTargetName": "test-ci",
+        "testMode": "watch"
+      }
     }
-  ]
+  ],
+  "release": {
+    "version": {
+      "conventionalCommits": true,
+      "adjustSemverBumpsForZeroMajorVersion": true,
+      "preVersionCommand": "nx affected -t build --base=$NX_RELEASE_BASE --head=HEAD"
+    },
+    "conventionalCommits": {
+      "types": {
+        "build": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Build System"
+          }
+        },
+        "ci": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Continuous Integration"
+          }
+        },
+        "chore": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Miscellaneous Chores"
+          }
+        },
+        "docs": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "Documentation Updates"
+          }
+        },
+        "feat": {
+          "semverBump": "minor",
+          "changelog": {
+            "title": "New Features"
+          }
+        },
+        "fix": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "Fixes"
+          }
+        },
+        "perf": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "Performance Improvements"
+          }
+        },
+        "refactor": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "Refactoring"
+          }
+        },
+        "revert": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Reverts"
+          }
+        },
+        "style": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Coding Style Changes"
+          }
+        },
+        "test": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Tests"
+          }
+        }
+      }
+    },
+    "git": {
+      "commit": false,
+      "tag": true
+    },
+    "projects": ["packages/*"],
+    "releaseTag": {
+      "pattern": "{projectName}/v{version}"
+    },
+    "projectsRelationship": "independent",
+    "changelog": {
+      "automaticFromRef": true,
+      "projectChangelogs": {
+        "file": false,
+        "createRelease": "github"
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    }
+  }
 }
