@@ -6,14 +6,17 @@ concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  actions: read
-  contents: read
+env:
+  HUSKY: 0
 
 jobs:
   ci:
     name: Continuous Integration
     runs-on: ubuntu-24.04
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v6
         with:
@@ -32,8 +35,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Set SHAs for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Nx base and head
+        run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+
       - name: Nx report
         run: pnpm exec nx report
 
       - name: Lint, typecheck, test, and build
-        run: pnpm exec nx run-many -t lint typecheck test build
+        run: pnpm exec nx affected -t lint typecheck test build
