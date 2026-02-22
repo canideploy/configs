@@ -1,0 +1,30 @@
+{
+  "name": "@canideploy/secretlint-config",
+  "version": "0.0.0",
+  "description": "Shared secretlint config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "./src/secretlint-config.json",
+  "files": [
+    "./src/secretlint-config.json"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canideploy/configs.git",
+    "directory": "packages/secretlint-config"
+  },
+  "keywords": [
+    "secretlint",
+    "config"
+  ],
+  "dependencies": {
+    "@secretlint/secretlint-rule-pattern": "^11.3.1",
+    "@secretlint/secretlint-rule-preset-recommend": "^11.3.1"
+  },
+  "peerDependencies": {
+    "secretlint": ">=8"
+  }
+}
