@@ -6,6 +6,7 @@
     "access": "public"
   },
   "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/prettier.config.js",
   "module": "./dist/prettier.config.js",
   "types": "./dist/prettier.config.d.ts",
@@ -29,6 +30,7 @@
     "vitest": "catalog:"
   },
   "peerDependencies": {
-    "prettier": ">=2.4.0"
+    "prettier": ">=2.4.0",
+    "vitest": "catalog:"
   }
 }
