@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
 
-export default defineConfig(() => ({
-  root: __dirname,
+export default defineConfig({
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/packages/prettier-config',
   resolve: {
     conditions: ['@canideploy/configs-monorepo'],
@@ -13,8 +13,9 @@ export default defineConfig(() => ({
     include: ['src/**/*.test.ts'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: './test-output/vitest/coverage',
-      provider: 'v8' as const,
+      include: ['src/**/*.ts'],
+      reportsDirectory: '../../coverage/packages/prettier-config',
+      provider: 'v8',
     },
   },
-}));
+});
