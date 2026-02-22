@@ -14,3 +14,5 @@ onlyBuiltDependencies:
   - nx
 
 strictPeerDependencies: true
+
+minimumReleaseAge: 2880 # 2 days
