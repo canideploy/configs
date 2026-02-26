@@ -18,6 +18,7 @@ minimumReleaseAgeExclude:
   - nx
   - '@nx/*'
   - verdaccio
+  - validate-package-exports
 
 onlyBuiltDependencies:
   - '@swc/core'

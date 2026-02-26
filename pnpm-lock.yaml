@@ -102,8 +102,8 @@ importers:
         specifier: ^8.56.1
         version: 8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
       validate-package-exports:
-        specifier: ^0.18.0
-        version: 0.18.0
+        specifier: ^0.19.1
+        version: 0.19.1
       verdaccio:
         specifier: ^6.2.7
         version: 6.2.7(encoding@0.1.13)(typanion@3.14.0)
@@ -4699,8 +4699,8 @@ packages:
     resolution: {integrity: sha512-hVDIBwsRruT73PbK7uP5ebUt+ezEtCmzZz3F59BSr2F6OVFnJ/6h8liuvdLrQ88Xmnk6/+xGGuq+pG9WwTuy3A==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  validate-package-exports@0.18.0:
-    resolution: {integrity: sha512-dEubwjYP7me7NQguIpHHGQG7tXCHJzXGBFuW4B4ZDLZ/p41193FK9tVS0gEInFAirFq0R02O9OxgoTnmwgA7MA==}
+  validate-package-exports@0.19.1:
+    resolution: {integrity: sha512-0c0tdaIUOZRjuDSG1fTPcw1O9XBe4y6K4DRKuF2siHaAGGLfXN6EPbxF1jLlKP6Zv4HQVVc6qUjMM4ohhP50NA==}
     engines: {node: '>=20.17.0'}
     hasBin: true
 
@@ -9964,7 +9964,7 @@ snapshots:
 
   validate-npm-package-name@7.0.2: {}
 
-  validate-package-exports@0.18.0:
+  validate-package-exports@0.19.1:
     dependencies:
       '@npmcli/arborist': 9.3.1
       '@webdeveric/utils': 0.74.1
