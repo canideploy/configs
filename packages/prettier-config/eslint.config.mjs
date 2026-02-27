@@ -12,6 +12,7 @@ export default [
         'error',
         {
           ignoredFiles: ['{projectRoot}/eslint.config.mjs', '{projectRoot}/vitest.config.mts'],
+          ignoredDependencies: ['prettier-plugin-packagejson'],
         },
       ],
     },

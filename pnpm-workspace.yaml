@@ -10,6 +10,7 @@ catalog:
   '@vitest/coverage-v8': ^4.0.18
   commitlint: ^20.4.2
   prettier: ^3.8.1
+  prettier-plugin-packagejson: ^3.0.0
   vitest: ^4.0.18
 
 minimumReleaseAge: 2880
