@@ -1,8 +1,8 @@
 {
   "name": "@canideploy/prettier-config",
-  "description": "shared prettier config",
   "version": "0.0.0",
-  "type": "module",
+  "description": "shared prettier config",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
@@ -23,8 +23,8 @@
     "name": "Eric King",
     "url": "http://webdeveric.com/"
   },
-  "license": "MIT",
   "sideEffects": false,
+  "type": "module",
   "main": "./dist/prettier.config.js",
   "module": "./dist/prettier.config.js",
   "types": "./dist/prettier.config.d.ts",
