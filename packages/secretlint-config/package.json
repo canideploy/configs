@@ -6,32 +6,33 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
+  "keywords": [
+    "secretlint",
+    "config"
   ],
-  "sideEffects": false,
-  "type": "module",
-  "main": "./dist/secretlint-config.js",
-  "types": "./dist/secretlint-config.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "@canideploy/configs-monorepo": "./src/secretlint-config.ts",
-      "types": "./dist/secretlint-config.d.ts",
-      "import": "./dist/secretlint-config.js",
-      "default": "./dist/secretlint-config.js"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/canideploy/configs.git",
     "directory": "packages/secretlint-config"
   },
-  "keywords": [
-    "secretlint",
-    "config"
+  "author": "Eric King <eric@canideploy.dev> (https://canideploy.dev)",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
   ],
+  "main": "./dist/secretlint-config.js",
+  "types": "./dist/secretlint-config.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/secretlint-config.d.ts",
+      "@canideploy/configs-monorepo": "./src/secretlint-config.ts",
+      "import": "./dist/secretlint-config.js",
+      "default": "./dist/secretlint-config.js"
+    }
+  },
   "dependencies": {
     "@secretlint/secretlint-rule-pattern": "^11.3.1",
     "@secretlint/secretlint-rule-preset-recommend": "^11.3.1"
