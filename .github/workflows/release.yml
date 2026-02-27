@@ -50,7 +50,9 @@ jobs:
       - name: Verify npm auth
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || '' }}
-        run: pnpm whoami || echo "Not authenticated"
+        run: |
+          cat .npmrc
+          pnpm whoami || echo "Not authenticated"
 
       - name: Release
         env:
