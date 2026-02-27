@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import secretlintConfig from '../src/secretlint-config.json' with { type: 'json' };
+import secretlintConfig from './secretlint-config.js';
 
 describe('secretlint-config', () => {
   it('should contain rules', () => {
