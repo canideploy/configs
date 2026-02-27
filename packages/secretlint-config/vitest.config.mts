@@ -10,7 +10,7 @@ export default defineConfig({
     name: '@canideploy/secretlint-config',
     watch: false,
     environment: 'node',
-    include: ['test/**/*.test.ts'],
+    include: ['src/**/*.test.ts'],
     reporters: ['default'],
     coverage: {
       include: ['src/**/*'],

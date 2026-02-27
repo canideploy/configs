@@ -7,18 +7,18 @@ This package provides shared secretlint configuration.
 Install the package as a development dependency at the root of your workspace
 
 ```bash
-pnpm i -D -w @canideploy/secretlint-config secretlint
+pnpm add @canideploy/secretlint-config secretlint -D
 ```
 
 ## Usage
 
-Create a `.secretlintrc.js` file at the root of your workspace with the following content:
+Create a `.secretlintrc.cjs` file at the root of your workspace with the following content:
 
 ```js
-const { rules } = require('@canideploy/secretlint-config');
+const config = require('@canideploy/secretlint-config');
 
 module.exports = {
-  rules: [...rules],
+  ...config.default,
 };
 ```
 

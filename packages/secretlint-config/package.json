@@ -2,15 +2,27 @@
   "name": "@canideploy/secretlint-config",
   "version": "0.0.0",
   "description": "Shared secretlint config",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "type": "module",
-  "main": "./src/secretlint-config.json",
   "files": [
-    "./src/secretlint-config.json"
+    "dist",
+    "!**/*.tsbuildinfo"
   ],
-  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/secretlint-config.js",
+  "types": "./dist/secretlint-config.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@canideploy/configs-monorepo": "./src/secretlint-config.ts",
+      "types": "./dist/secretlint-config.d.ts",
+      "import": "./dist/secretlint-config.js",
+      "default": "./dist/secretlint-config.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/canideploy/configs.git",
@@ -23,6 +35,9 @@
   "dependencies": {
     "@secretlint/secretlint-rule-pattern": "^11.3.1",
     "@secretlint/secretlint-rule-preset-recommend": "^11.3.1"
+  },
+  "devDependencies": {
+    "@secretlint/types": "^11.3.1"
   },
   "peerDependencies": {
     "secretlint": ">=8"
