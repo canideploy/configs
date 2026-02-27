@@ -6,6 +6,7 @@ coverage
 dist
 node_modules
 out-tsc
+private
 tmp
 tsconfig.tsbuildinfo
 vitest.config.*.timestamp*
