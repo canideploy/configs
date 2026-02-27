@@ -38,19 +38,3 @@ Verify a commit message is spellchecked by running the following command:
 ```bash
 echo "feat(speling): demo" | npx --no commitlint
 ```
-
-## Git Hooks
-
-We recommend using [Husky](https://typicode.github.io/husky) to enforce the commit message format and spellcheck the commit messages.
-
-### Install Husky
-
-```bash
-npx husky init
-```
-
-Create a `commit-msg` file in the `.husky` directory with the following content:
-
-```text
-npx --no -- commitlint --edit $1
-```
