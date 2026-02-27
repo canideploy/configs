@@ -1,7 +1,17 @@
 {
   "version": "0.2",
   "ignoreRandomStrings": true,
-  "words": ["canideploy", "commitlint", "esbuild", "startover", "tsconfig.json", "webdeveric", "nrwl", "vitest"],
+  "words": [
+    "canideploy",
+    "commitlint",
+    "esbuild",
+    "startover",
+    "tsconfig.json",
+    "webdeveric",
+    "nrwl",
+    "vitest",
+    "npmjs.org"
+  ],
   "ignoreWords": ["orizer"],
   "ignorePaths": ["pnpm-lock.yaml", "pnpm-workspace.yaml"]
 }
