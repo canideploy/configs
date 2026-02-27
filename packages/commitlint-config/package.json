@@ -2,11 +2,10 @@
   "name": "@canideploy/commitlint-config",
   "version": "0.0.0",
   "description": "commitlint config using conventional commits",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "type": "module",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/canideploy/configs.git",
@@ -22,8 +21,19 @@
     "dist",
     "!**/*.tsbuildinfo"
   ],
+  "type": "module",
   "main": "./dist/commitlint-config.js",
+  "module": "./dist/commitlint-config.js",
   "types": "./dist/commitlint-config.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@canideploy/configs-monorepo": "./src/commitlint-config.ts",
+      "types": "./dist/commitlint-config.d.ts",
+      "import": "./dist/commitlint-config.js",
+      "default": "./dist/commitlint-config.js"
+    }
+  },
   "dependencies": {
     "@commitlint/config-conventional": "^20.4.2",
     "@commitlint/types": "catalog:",
