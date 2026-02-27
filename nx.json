@@ -56,7 +56,7 @@
     "version": {
       "conventionalCommits": true,
       "adjustSemverBumpsForZeroMajorVersion": true,
-      "preVersionCommand": "nx affected -t build --base=$NX_RELEASE_BASE --head=HEAD",
+      "preVersionCommand": "nx affected -t build --base=$NX_BASE --head=$NX_HEAD",
       "versionActionsOptions": {
         "skipLockFileUpdate": true
       }

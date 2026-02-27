@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-24.04
     environment: release
     permissions:
+      actions: read
+      pull-requests: read
       contents: write # to enable pushing commits and tags
       id-token: write # to enable use of OIDC for npm provenance
     steps:
@@ -31,13 +33,19 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Nx SHAs
+        run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
-          scope: '@canideploy'
-          token: ${{ secrets.NPM_TOKEN }}
 
       - name: Installing dependencies
         run: pnpm install --frozen-lockfile
