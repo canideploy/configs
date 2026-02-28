@@ -34,6 +34,6 @@ const config = {
       ],
     ],
   },
-} satisfies UserConfig;
+} as const satisfies UserConfig;
 
 export default config;
