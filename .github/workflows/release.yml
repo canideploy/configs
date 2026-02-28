@@ -59,14 +59,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Verify npm auth
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || '' }}
-        run: |
-          pnpm whoami || echo "Not authenticated"
+      # Uncomment to debug npm authentication issues
+      # - name: Verify npm auth
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || '' }}
+      #   run: |
+      #     pnpm whoami || echo "Not authenticated"
 
       - name: Release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || '' }}
           NPM_CONFIG_PROVENANCE: true
-        run: pnpm exec nx release publish --skip-nx-cache
+        run: pnpm exec nx release --skip-nx-cache
