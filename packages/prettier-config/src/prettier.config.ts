@@ -13,7 +13,7 @@ const config = {
   requirePragma: false,
   insertPragma: false,
   proseWrap: 'never',
-  plugins: ['prettier-plugin-packagejson'],
+  plugins: [import.meta.resolve('prettier-plugin-packagejson')],
   packageSortOrder: [
     'name',
     'version',
