@@ -38,7 +38,7 @@
   "dependencies": {
     "@commitlint/config-conventional": "^20.4.2",
     "@commitlint/types": "catalog:",
-    "commitlint-plugin-cspell": "^0.5.0"
+    "commitlint-plugin-cspell": "^0.6.0"
   },
   "devDependencies": {
     "@commitlint/lint": "^20.4.2",

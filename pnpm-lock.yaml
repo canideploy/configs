@@ -126,8 +126,8 @@ importers:
         specifier: 'catalog:'
         version: 20.4.0
       commitlint-plugin-cspell:
-        specifier: ^0.5.0
-        version: 0.5.0(@commitlint/lint@20.4.2)
+        specifier: ^0.6.0
+        version: 0.6.0(@commitlint/lint@20.4.2)
     devDependencies:
       '@commitlint/lint':
         specifier: ^20.4.2
@@ -2536,8 +2536,8 @@ packages:
     resolution: {integrity: sha512-taEtr3ozUmOB7it68Jll7s0Pwm+aoiHyXKrEC8SEodL4rNpdfDLqa7PfBlrgFoCNNdR8ImL+muti5IGvktJAAg==}
     engines: {node: '>= 6'}
 
-  commitlint-plugin-cspell@0.5.0:
-    resolution: {integrity: sha512-u+1TSZZ2bEaM08zNxz4QJKKYnze3Hj/pE5BQKbK5DNrBDMXnkDIbXJGW4XOeUpMWZVkdq28mic1IsWZpfsny7g==}
+  commitlint-plugin-cspell@0.6.0:
+    resolution: {integrity: sha512-zD9R/bZmbOMZyh3iYSqEnXKYXSe6mdMC70w0bmXW8KKczS9Pt6v3wB+WfBWY6DnokVojFklxFA0P0868RaM5ag==}
     peerDependencies:
       '@commitlint/lint': '>=7.6.0'
 
@@ -7659,7 +7659,7 @@ snapshots:
       core-util-is: 1.0.3
       esprima: 4.0.1
 
-  commitlint-plugin-cspell@0.5.0(@commitlint/lint@20.4.2):
+  commitlint-plugin-cspell@0.6.0(@commitlint/lint@20.4.2):
     dependencies:
       '@commitlint/lint': 20.4.2
       '@commitlint/types': 20.4.0
