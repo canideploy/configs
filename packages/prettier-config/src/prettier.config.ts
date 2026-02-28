@@ -43,6 +43,6 @@ const config = {
     'peerDependenciesMeta',
     'optionalDependencies',
   ],
-} satisfies Config;
+} as const satisfies Config;
 
 export default config;
