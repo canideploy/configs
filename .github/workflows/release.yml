@@ -71,5 +71,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || '' }}
           NPM_CONFIG_PROVENANCE: true
         run: |
-          pnpm exec nx release version --skip-nx-cache
+          pnpm exec nx release version
           pnpm exec nx release publish --skip-nx-cache
