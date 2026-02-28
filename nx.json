@@ -59,6 +59,10 @@
       "preVersionCommand": "nx affected -t build",
       "versionActionsOptions": {
         "skipLockFileUpdate": true
+      },
+      "git": {
+        "commit": true,
+        "tag": true
       }
     },
     "conventionalCommits": {
@@ -143,10 +147,6 @@
         }
       }
     },
-    "git": {
-      "commit": true,
-      "tag": true
-    },
     "projects": ["packages/*"],
     "releaseTag": {
       "pattern": "{projectName}/v{version}"
@@ -157,6 +157,10 @@
       "projectChangelogs": {
         "file": false,
         "createRelease": "github"
+      },
+      "git": {
+        "commit": true,
+        "tag": true
       }
     }
   },
