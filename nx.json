@@ -12,11 +12,24 @@
     "autoExit": true
   },
   "namedInputs": {
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
-    "default": ["{projectRoot}/**/*", "!{workspaceRoot}/package.json", "!{workspaceRoot}/pnpm-lock.yaml"],
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci.yml",
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/pnpm-lock.yaml",
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/cspell.json"
+    ],
+    "default": [
+      "{projectRoot}/**/*",
+      "!{workspaceRoot}/package.json",
+      "!{workspaceRoot}/pnpm-lock.yaml",
+      "!{workspaceRoot}/nx.json",
+      "!{workspaceRoot}/tsconfig.json",
+      "!{workspaceRoot}/tsconfig.base.json"
+    ],
     "production": [
       "default",
-      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/eslint.config.mjs",
       "!{projectRoot}/**/?(*.)+test.[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.test.json"
@@ -57,6 +70,7 @@
       "conventionalCommits": true,
       "adjustSemverBumpsForZeroMajorVersion": true,
       "preVersionCommand": "nx affected -t build",
+      "fallbackCurrentVersionResolver": "disk",
       "versionActionsOptions": {
         "skipLockFileUpdate": true
       },
@@ -167,6 +181,7 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
+      "inputs": ["production"],
       "outputs": ["{projectRoot}/dist"]
     }
   }
