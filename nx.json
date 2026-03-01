@@ -13,7 +13,7 @@
   },
   "namedInputs": {
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
-    "default": ["{projectRoot}/**/*"],
+    "default": ["{projectRoot}/**/*", "!{workspaceRoot}/package.json", "!{workspaceRoot}/pnpm-lock.yaml"],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
