@@ -6,6 +6,7 @@ const config = {
   useTabs: false,
   semi: true,
   singleQuote: true,
+  jsxSingleQuote: true,
   trailingComma: 'all',
   bracketSameLine: false,
   bracketSpacing: true,
