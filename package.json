@@ -15,6 +15,7 @@
     "local-registry": "nx run @canideploy/configs-monorepo:local-registry",
     "prepare": "husky",
     "secretlint": "secretlint . --maskSecrets",
+    "show-affected": "nx show projects --affected",
     "spellcheck": "cspell --dot \"./{.github,packages}/**/*.{md,js,mjs,cjs,ts,mts,cts,tsx,json,yml}\" \"./*.{md,js,mjs,cjs,ts,mts,cts,tsx,json}\"",
     "sync": "nx sync",
     "test": "nx run-many -t test",
