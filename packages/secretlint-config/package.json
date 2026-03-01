@@ -1,6 +1,6 @@
 {
   "name": "@canideploy/secretlint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shared secretlint config",
   "license": "MIT",
   "publishConfig": {
