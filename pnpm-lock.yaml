@@ -29,6 +29,9 @@ importers:
       '@canideploy/commitlint-config':
         specifier: workspace:*
         version: link:packages/commitlint-config
+      '@canideploy/cspell-config':
+        specifier: workspace:*
+        version: link:packages/cspell-config
       '@canideploy/prettier-config':
         specifier: workspace:*
         version: link:packages/prettier-config
@@ -141,6 +144,19 @@ importers:
       conventional-commits-parser:
         specifier: ^6.2.1
         version: 6.2.1
+
+  packages/cspell-config:
+    dependencies:
+      cspell:
+        specifier: '>=9'
+        version: 9.7.0
+    devDependencies:
+      cspell-lib:
+        specifier: ^9.7.0
+        version: 9.7.0
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.18(@types/node@25.3.2)(jiti@2.6.1)(yaml@2.8.2)
 
   packages/prettier-config:
     dependencies:

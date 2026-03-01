@@ -25,6 +25,7 @@
   "prettier": "@canideploy/prettier-config",
   "devDependencies": {
     "@canideploy/commitlint-config": "workspace:*",
+    "@canideploy/cspell-config": "workspace:*",
     "@canideploy/prettier-config": "workspace:*",
     "@canideploy/secretlint-config": "workspace:*",
     "@commitlint/types": "catalog:",

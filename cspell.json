@@ -1,17 +1,9 @@
 {
   "version": "0.2",
+  "language": "en",
   "ignoreRandomStrings": true,
-  "words": [
-    "canideploy",
-    "commitlint",
-    "esbuild",
-    "startover",
-    "tsconfig.json",
-    "webdeveric",
-    "nrwl",
-    "vitest",
-    "npmjs.org"
-  ],
+  "import": ["@canideploy/cspell-config"],
+  "words": [],
   "ignoreWords": ["orizer"],
-  "ignorePaths": ["pnpm-lock.yaml", "pnpm-workspace.yaml"]
+  "ignorePaths": ["node_modules", "dist", "build", "coverage", "private", "package.json", "pnpm-lock.yaml"]
 }
