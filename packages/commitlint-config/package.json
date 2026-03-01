@@ -1,6 +1,6 @@
 {
   "name": "@canideploy/commitlint-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "commitlint config using conventional commits",
   "license": "MIT",
   "publishConfig": {
