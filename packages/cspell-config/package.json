@@ -1,0 +1,36 @@
+{
+  "name": "@canideploy/cspell-config",
+  "version": "0.0.0",
+  "description": "CSpell config with custom dictionaries",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cspell",
+    "dictionary"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canideploy/configs.git",
+    "directory": "packages/cspell-config"
+  },
+  "type": "module",
+  "files": [
+    "./dictionary",
+    "./config.json"
+  ],
+  "main": "./config.json",
+  "devDependencies": {
+    "cspell-lib": "^9.7.0",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "cspell": ">=9"
+  },
+  "peerDependenciesMeta": {
+    "cspell": {
+      "optional": true
+    }
+  }
+}

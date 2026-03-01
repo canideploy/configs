@@ -13,6 +13,9 @@
       "path": "./packages/commitlint-config"
     },
     {
+      "path": "./packages/cspell-config"
+    },
+    {
       "path": "./tools/workspace"
     }
   ]
