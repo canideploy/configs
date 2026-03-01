@@ -1,4 +1,4 @@
-.PHONY: instructions install audit reset sync test build startover clean rm-coverage rm-dist rm-node-modules
+.PHONY: instructions install audit reset sync test build startover clean rm-coverage rm-dist rm-out-tsc rm-node-modules
 
 instructions:
 	-@ echo "Available commands:"
@@ -37,19 +37,24 @@ build:
 
 startover: clean rm-node-modules install reset
 
-clean: rm-coverage rm-dist
+clean: rm-coverage rm-dist rm-out-tsc
 
 rm-coverage:
-	@echo "Removing coverage folders..."
+	@echo -n "Removing coverage folders... "
 	-@ rm -rf ./coverage ./{apps,libs,packages}/*/coverage
-	@echo "coverage folders have been removed"
+	@echo "done"
 
 rm-dist:
-	@echo "Removing dist folders..."
+	@echo -n "Removing dist folders... "
 	-@ rm -rf ./dist ./packages/*/dist
-	@echo "dist folders have been removed"
+	@echo "done"
+
+rm-out-tsc:
+	@echo -n "Removing out-tsc folders... "
+	-@ rm -rf ./packages/*/out-tsc
+	@echo "done"
 
 rm-node-modules:
-	@echo "Removing node_modules folders..."
+	@echo -n "Removing node_modules folders... "
 	-@ rm -rf ./node_modules ./packages/*/node_modules
-	@echo "node_modules folders have been removed"
+	@echo "done"
