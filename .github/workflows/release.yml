@@ -73,4 +73,5 @@ jobs:
           NPM_CONFIG_PROVENANCE: true
         run: |
           pnpm exec nx release version
+          git push --follow-tags
           pnpm exec nx release publish --skip-nx-cache
